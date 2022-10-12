@@ -1,0 +1,362 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: https://lvaapp1242.hu.cre.insim.biz:7843
+basePath: '/'
+paths:
+  /ESB/REST/rates/currency:
+    get:
+      operationId: Currency
+      parameters:
+        - name: sId
+          in: query
+          required: false
+          type: string
+          description: system id
+        - name: techUId
+          in: query
+          required: false
+          type: string
+          description: technical user id
+        - name: transId
+          in: query
+          required: false
+          type: string
+          description: transaction id
+        - name: names
+          in: query
+          required: false
+          type: string
+          description: list of currencies (separated by comma)
+        - name: fromDate
+          in: query
+          required: false
+          type: string
+          description: date to query from
+        - name: toDate
+          in: query
+          required: false
+          type: string
+          description: date to query to
+      responses:
+        200: 
+          description: 'OK'
+          schema: 
+            $ref: '#/definitions/currency'
+        500: {
+          description: 'FAULT'
+        }
+  /ESB/REST/rates/currency/midRate:
+    get:
+      operationId: buyRate
+      parameters:
+        - name: sId
+          in: query
+          required: false
+          type: string
+          description: system id
+        - name: techUId
+          in: query
+          required: false
+          type: string
+          description: technical user id
+        - name: transId
+          in: query
+          required: false
+          type: string
+          description: transaction id
+        - name: names
+          in: query
+          required: false
+          type: string
+          description: list of currencies (separated by comma)
+        - name: fromDate
+          in: query
+          required: false
+          type: string
+          description: date to query from
+        - name: toDate
+          in: query
+          required: false
+          type: string
+          description: date to query to
+        - name: pTransId
+          in: query
+          required: false
+          type: string
+          description: parent transaction id
+      responses:
+        200: 
+          description: 'OK'
+          schema: 
+            $ref: '#/definitions/currency'
+        500:
+          description: 'FAULT'
+  /ESB/REST/rates/fund/offerPrice/:
+    get:
+      operationId: Fund
+      parameters:
+        - name: sId
+          in: query
+          required: false
+          type: string
+        - name: techUId
+          in: query
+          required: false
+          type: string
+        - name: transId
+          in: query
+          required: false
+          type: string
+      responses:
+        '200': {
+          description: 'OK'
+        }
+        '500': {
+          description: 'FAULT'
+        }
+  /ESB/REST/rates/fund/offerPrice/barePrice:
+    get:
+      operationId: barePrice
+      parameters:
+        - name: sId
+          in: query
+          required: false
+          type: string
+        - name: techUId
+          in: query
+          required: false
+          type: string
+        - name: transId
+          in: query
+          required: false
+          type: string
+      responses:
+        '200': {
+          description: 'OK'
+        }
+        '500': {
+          description: 'FAULT'
+        }
+  /ESB/REST/rates/fund/offerPrice/barePrice/withChangePercent:
+    get:
+      operationId: withChangePercent
+      parameters:
+        - name: sId
+          in: query
+          required: false
+          type: string
+        - name: techUId
+          in: query
+          required: false
+          type: string
+        - name: transId
+          in: query
+          required: false
+          type: string
+        - name: fromDate
+          in: query
+          required: false
+          type: string
+      responses:
+        '200': {
+          description: 'OK'
+        }
+        '500': {
+          description: 'FAULT'
+        }
+  /ESB/REST/rates/fund/offerPrice/bidAvarage:
+    get:
+      operationId: bidAvarage
+      parameters:
+        - name: sId
+          in: query
+          required: false
+          type: string
+        - name: techUId
+          in: query
+          required: false
+          type: string
+        - name: transId
+          in: query
+          required: false
+          type: string
+      responses:
+        '200': {
+          description: 'OK'
+        }
+        '500': {
+          description: 'FAULT'
+        }
+  /ESB/REST/rates/fund/offerPrice/bidPrice:
+    get:
+      operationId: bidPrice
+      parameters:
+        - name: sId
+          in: query
+          required: false
+          type: string
+        - name: techUId
+          in: query
+          required: false
+          type: string
+        - name: transId
+          in: query
+          required: false
+          type: string
+      responses:
+        '200': {
+          description: 'OK'
+        }
+        '500': {
+          description: 'FAULT'
+        }
+  /ESB/REST/rates/fund/offerPrice/offerAvarage:
+    get:
+      operationId: offerAvarage
+      parameters:
+        - name: sId
+          in: query
+          required: false
+          type: string
+        - name: techUId
+          in: query
+          required: false
+          type: string
+        - name: transId
+          in: query
+          required: false
+          type: string
+      responses:
+        '200': {
+          description: 'OK'
+        }
+        '500': {
+          description: 'FAULT'
+        }
+  /ESB/REST/rates/fund/offerPrice/offerPrice:
+    get:
+      operationId: offerPrice
+      parameters:
+        - name: sId
+          in: query
+          required: false
+          type: string
+        - name: techUId
+          in: query
+          required: false
+          type: string
+        - name: transId
+          in: query
+          required: false
+          type: string
+        - name: fromDate
+          in: query
+          required: false
+          type: string
+      responses:
+        '200': {
+          description: 'OK'
+        }
+        '500': {
+          description: 'FAULT'
+        }
+  /ESB/REST/rates/fund/offerPrice/withChangePercent:
+    get:
+      operationId: bareAvarage
+      parameters:
+        - name: sId
+          in: query
+          required: false
+          type: string
+        - name: techUId
+          in: query
+          required: false
+          type: string
+        - name: transId
+          in: query
+          required: false
+          type: string
+        - name: avgDays
+          in: query
+          required: false
+          type: string
+        - name: fromDate
+          in: query
+          required: false
+          type: string
+        - name: name
+          in: query
+          required: false
+          type: string
+      responses:
+        '200': {
+          description: 'OK'
+        }
+        '500': {
+          description: 'FAULT'
+        }
+definitions:
+  currency:
+      type: object
+      description: 'currency query response'
+      properties:
+        startTimestamp:
+          type: number
+          description: 'first day of list in millis'
+        endTimestamp:
+          type: number
+          description: 'last day of list in millis'
+        "type":
+          type: string
+          description: 'response type'
+          default: 'rate'
+        chartIndex:
+          type: integer
+          description: 'always 0 - only used for percent list'
+        header:
+          type: array
+          minItems: 3
+          maxItems: 3
+          items:
+            type: object
+            description: 'table header items'
+            properties:
+              name:
+                type: string
+              tpye:
+                type: string
+        data:
+          type: array
+          items:
+            type: object
+            description: 'table data items per currency'
+            properties:
+              name:
+                type: string
+                description: 'currency hungarian name'
+              table:
+                allOf: 
+                - type: array
+                  minItems: 1
+                  maxItems: 1
+                  items: {}
+                - type: array
+                  minItems: 2
+                  maxItems: 2
+                  items:
+                    type: object
+                    description: 'currency table suffix'
+                    properties:
+                      suffix:
+                        type: string
+                        description: 'field suffix'
+              data:
+                type: object
+                additionalProperties:
+                  type: array
+                  items:
+                    type: array
+                    minItems: 2
+                    items:
+                      type: integer
